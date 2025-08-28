@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI & Calorie Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Hamburger Menu -->
+  <div class="menu">
+    <span class="menu-icon" onclick="toggleMenu()">☰</span>
+    <div id="menu-links" class="menu-links">
+      <a href="#" onclick="showCalculator('bmi')">BMI Calculator</a>
+      <a href="#" onclick="showCalculator('calorie')">Calorie Calculator</a>
+    </div>
+  </div>
+
+  <!-- Main Container -->
+  <div class="container">
+    <!-- BMI Calculator -->
+    <div id="bmi-calculator" class="calculator">
+      <h1>BMI Calculator</h1>
+      <label>Age:</label>
+      <input type="number" id="age" placeholder="Enter age">
+      <label>Weight (kg):</label>
+      <input type="number" id="weight" placeholder="Enter weight">
+      <label>Height (cm):</label>
+      <input type="number" id="height" placeholder="Enter height">
+      <button onclick="calculateBMI()">Calculate BMI</button>
+      <div class="chart">
+  <h2>BMI Categories</h2>
+  <canvas id="bmiChart"></canvas>
+</div>
+      <p id="bmi-result"></p>
+    </div>
+
+    <!-- Calorie Calculator -->
+    <div id="calorie-calculator" class="calculator hidden">
+      <h1>Calorie Calculator</h1>
+      <label>Age:</label>
+      <input type="number" id="cal-age" placeholder="Enter age">
+      <label>Gender:</label>
+      <select id="cal-gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+      <label>Weight (kg):</label>
+      <input type="number" id="cal-weight" placeholder="Enter weight">
+      <label>Height (cm):</label>
+      <input type="number" id="cal-height" placeholder="Enter height">
+      <label>Activity Level:</label>
+      <select id="activity">
+        <option value="1.2">Sedentary</option>
+        <option value="1.375">Lightly Active</option>
+        <option value="1.55">Moderately Active</option>
+        <option value="1.725">Very Active</option>
+        <option value="1.9">Extra Active</option>
+      </select>
+      <button onclick="calculateCalories()">Calculate Calories</button>
+      <p id="calorie-result"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
